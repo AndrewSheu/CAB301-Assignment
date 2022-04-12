@@ -67,7 +67,7 @@ class MemberCollection : IMemberCollection
     public void Add(IMember member)
     {
     // To be implemented by students in Phase 1
-
+        Member aMember = new Member();
 
 
 
