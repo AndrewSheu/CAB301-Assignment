@@ -14,7 +14,7 @@ namespace Assignment1
 
 
             //testing delete
-            sCollection.Delete("Annie","Lu","0432291538");
+            //sCollection.Delete("Annie","Lu","0432291538");
 
 
 

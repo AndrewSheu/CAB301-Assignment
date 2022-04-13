@@ -23,7 +23,7 @@ class MemberCollection : IMemberCollection
     // post-condition: return the number of members in this member collection and this member collection remains unchanged
     public int Number { get { return count; } }
 
-   
+
 
 
     // Constructor - to create an object of member collection 
@@ -66,12 +66,27 @@ class MemberCollection : IMemberCollection
     // No duplicate will be added into this the member collection
     public void Add(IMember member)
     {
-    // To be implemented by students in Phase 1
-        Member aMember = new Member();
+        // To be implemented by students in Phase 1
+        if (!IsFull())
+            [
+                if (member.LastName == "Andrew")
+            {
+                Member[] members;
+                count++;
+            }
+            else
+            {
+                if (member.FirstName == "any")
+                {
+                    Member[] members;
+                }
+            }
+        ]
 
-
-
-
+        else
+        {
+            Console.WriteLine();
+        }
 
 
     }
@@ -81,7 +96,7 @@ class MemberCollection : IMemberCollection
     // Post-condition: the given member has been removed from this member collection, if the given meber was in the member collection
     public void Delete(IMember aMember)
     {
-    // To be implemented by students in Phase 1
+        // To be implemented by students in Phase 1
 
 
 
@@ -94,39 +109,48 @@ class MemberCollection : IMemberCollection
     // Post-condition: return true if this memeber is in the member collection; return false otherwise; member collection remains unchanged
     public bool Search(IMember member)
     {
-    // To be implemented by students in Phase 1
+        // To be implemented by students in Phase 1
 
-
-
-
-
-
-    }
-
-    // Remove all the members in this member collection
-    // Pre-condition: nil
-    // Post-condition: no member in this member collection 
-    public void Clear()
-    {
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < Number - 1; i++)
         {
-            this.members[i] = null;
+            if (members[i] != null)
+            {
+                foreach (IMember tool in members[i])
+                {
+                    if (tool == member)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+
         }
-        count = 0;
+
+        // Remove all the members in this member collection
+        // Pre-condition: nil
+        // Post-condition: no member in this member collection 
+        public void Clear()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                this.members[i] = null;
+            }
+            count = 0;
+        }
+
+        // Return a string containing the information about all the members in this member collection.
+        // The information includes last name, first name and contact number in this order
+        // Pre-condition: nil
+        // Post-condition: a string containing the information about all the members in this member collection is returned
+        public string ToString()
+        {
+            string s = "";
+            for (int i = 0; i < count; i++)
+                s = s + members[i].ToString() + "\n";
+            return s;
+        }
+
+
     }
-
-    // Return a string containing the information about all the members in this member collection.
-    // The information includes last name, first name and contact number in this order
-    // Pre-condition: nil
-    // Post-condition: a string containing the information about all the members in this member collection is returned
-    public string ToString()
-    {
-        string s = "";
-        for (int i = 0; i < count; i++)
-            s = s + members[i].ToString() + "\n";
-        return s;
-    }
-
-
-}
 
