@@ -68,27 +68,22 @@ class MemberCollection : IMemberCollection
     {
         // To be implemented by students in Phase 1
         if (!IsFull())
-            [
-                if (member.LastName == "Andrew")
+        {
+            if (Member.CompareTo(member.LastName) < 0)
             {
-                Member[] members;
-                count++;
-            }
+                if (member.LastName == null )
+                {
+                    member.LastName = new member.lastName;
+                }
             else
             {
-                if (member.FirstName == "any")
-                {
-                    Member[] members;
-                }
+                member.FirstName = new member.lastName;
             }
-        ]
-
+        }
         else
         {
-            Console.WriteLine();
+            Console.WriteLine("The list is full");
         }
-
-
     }
 
     // Remove a given member out of this member collection
@@ -97,9 +92,7 @@ class MemberCollection : IMemberCollection
     public void Delete(IMember aMember)
     {
         // To be implemented by students in Phase 1
-
-
-
+        if (aMember == )
 
 
     }

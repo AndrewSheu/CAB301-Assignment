@@ -25,6 +25,9 @@ namespace Assignment1
             Console.WriteLine();
 
 
+            sCollection.Clear();
+
+
         }
     }
 }
