@@ -68,24 +68,32 @@ class MemberCollection : IMemberCollection
     {
         // To be implemented by students in Phase 1
         if (!IsFull())
-            [
-                if (member.LastName == "Andrew")
+        {
+            Member aMember = new Member(lastName, firstName);
+            
+            int i = 0;
+            while (( i < count) && ( members[i].CompareTo(aMember)) != 0 )
             {
-                Member[] members;
+                i++;
+            }
+
+            if ( i == count)
+            {
+                ///if no same last name, add the last name
+                members[count] = aMember;
                 count++;
             }
             else
             {
-                if (member.FirstName == "any")
-                {
-                    Member[] members;
-                }
+                ///if have same first name, add first name
+                for (int j = i + 1; j < count; j++)
+                    members[j - 1] = members[j];
+                count--;
             }
-        ]
-
+        }
         else
         {
-            Console.WriteLine();
+            Console.WriteLine("The List is not Full");
         }
 
 
@@ -126,31 +134,31 @@ class MemberCollection : IMemberCollection
             return false;
 
         }
-
-        // Remove all the members in this member collection
-        // Pre-condition: nil
-        // Post-condition: no member in this member collection 
-        public void Clear()
-        {
-            for (int i = 0; i < count; i++)
-            {
-                this.members[i] = null;
-            }
-            count = 0;
-        }
-
-        // Return a string containing the information about all the members in this member collection.
-        // The information includes last name, first name and contact number in this order
-        // Pre-condition: nil
-        // Post-condition: a string containing the information about all the members in this member collection is returned
-        public string ToString()
-        {
-            string s = "";
-            for (int i = 0; i < count; i++)
-                s = s + members[i].ToString() + "\n";
-            return s;
-        }
-
-
     }
+
+    // Remove all the members in this member collection
+    // Pre-condition: nil
+    // Post-condition: no member in this member collection 
+    public void Clear()
+    {
+        for (int i = 0; i < count; i++)
+        {
+            this.members[i] = null;
+        }
+        count = 0;
+    }
+
+    // Return a string containing the information about all the members in this member collection.
+    // The information includes last name, first name and contact number in this order
+    // Pre-condition: nil
+    // Post-condition: a string containing the information about all the members in this member collection is returned
+    public string ToString()
+    {
+        string s = "";
+        for (int i = 0; i < count; i++)
+            s = s + members[i].ToString() + "\n";
+        return s;
+    }
+}
+
 

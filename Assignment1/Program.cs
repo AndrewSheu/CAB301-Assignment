@@ -10,7 +10,10 @@ namespace Assignment1
 
             //testing add
             sCollection.Add("Andrew","Sheu","0452276278");
+            sCollection.Add("Sam","Sheu","0919340267");
+            sCollection.ToString();
             Console.WriteLine();
+
 
 
             //testing delete
@@ -19,7 +22,6 @@ namespace Assignment1
 
 
             //testing search
-            sCollection.Search("Sam","Sheu","0919340267");
 
 
             Console.WriteLine();
