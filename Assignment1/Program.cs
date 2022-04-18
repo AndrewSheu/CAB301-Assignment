@@ -9,7 +9,7 @@ namespace Assignment1
             MemberCollection sCollection = new MemberCollection();
 
             //testing add
-            sCollection.Add(IMember);//"Andrew","Sheu","0452276278"
+            sCollection.Add(member.Firstname : "Andrew", "Sheu");//"Andrew","Sheu","0452276278"
             sCollection.Add();//"Sam","Sheu","0919340267"
             sCollection.ToString();
             Console.WriteLine();

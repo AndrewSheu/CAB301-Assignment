@@ -69,15 +69,15 @@ class MemberCollection : IMemberCollection
         // To be implemented by students in Phase 1
         if (!IsFull())
         {
-            Member aMember = new Member(lastName, firstName);
-            
+            Member aMember = new Member(member.FirstName, member.LastName);
+
             int i = 0;
-            while (( i < count) && ( members[i].CompareTo(aMember)) != 0 )
+            while ((i < count) && (members[i].CompareTo(aMember)) != 0)
             {
                 i++;
             }
 
-            if ( i == count)
+            if (i == count)
             {
                 ///if no same last name, add the last name
                 members[count] = aMember;
