@@ -102,13 +102,31 @@ class MemberCollection : IMemberCollection
     // Remove a given member out of this member collection
     // Pre-condition: nil
     // Post-condition: the given member has been removed from this member collection, if the given meber was in the member collection
-    public void Delete(IMember aMember)
+    public async void Delete(IMember aMember)
     {
         // To be implemented by students in Phase 1
 
+        Member fMember = new Member(aMember.FirstName, aMember.LastName);
 
+        int i = 0;
 
+        while (( i < count) && (members[i].CompareTo(fMember) != 0 ))
+        {
+            i++;
+        }
 
+        if ( i == count )
+        {
+
+        }
+        else
+        {
+            for (int j = i + 1; j < count; j++)
+            {
+                members[j-1] = members[i];
+            }
+            count--;
+        }
 
     }
 
@@ -119,16 +137,15 @@ class MemberCollection : IMemberCollection
     {
         // To be implemented by students in Phase 1
 
+        Member fMember = new Member( member.FirstName, member.LastName);
+
         for (int i = 0; i < Number - 1; i++)
         {
             if (members[i] != null)
             {
-                foreach (IMember tool in members[i])
+                if (members[i].CompareTo(fMember) == 0)
                 {
-                    if (tool == member)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
             return false;
