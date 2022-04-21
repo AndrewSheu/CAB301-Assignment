@@ -1,4 +1,4 @@
-﻿//CAB301 assessment 1 - 2022
+﻿    //CAB301 assessment 1 - 2022
 //The implementation of MemberCollection ADT
 using System;
 using System.Linq;
@@ -42,6 +42,7 @@ class MemberCollection : IMemberCollection
 
     public MemberCollection()
     {
+        members = new Member[8];
     }
 
     // check if this member collection is full
@@ -65,16 +66,16 @@ class MemberCollection : IMemberCollection
     // Post-condition: a new member is added to the member collection and the members are sorted in ascending order by their full names;
     // No duplicate will be added into this the member collection
     public void Add(IMember member)
-    {
+    {       
         // To be implemented by students in Phase 1
-        if (!IsFull())
+        //if (!IsFull())
         {
             Member aMember = new Member(member.FirstName, member.LastName);
 
             int i = 0;
             while ((i < count) && (members[i].CompareTo(aMember)) != 0)
             {
-                i++;
+                i++;    
             }
 
             if (i == count)
@@ -82,18 +83,18 @@ class MemberCollection : IMemberCollection
                 ///if no same last name, add the last name
                 members[count] = aMember;
                 count++;
+                Console.WriteLine("123");
+                Console.WriteLine(count);
+                Console.WriteLine(capacity);
+                Console.WriteLine(i);
+
+
             }
-            else
-            {
-                ///if have same first name, add first name
-                for (int j = i + 1; j < count; j++)
-                    members[j - 1] = members[j];
-                count--;
-            }
+
         }
-        else
+        //else
         {
-            Console.WriteLine("The List is not Full");
+            //Console.WriteLine("The List is Full");
         }
 
 
@@ -139,18 +140,23 @@ class MemberCollection : IMemberCollection
 
         Member fMember = new Member( member.FirstName, member.LastName);
 
-        for (int i = 0; i < Number - 1; i++)
+        if (Number != 0)
         {
-            if (members[i] != null)
+            for (int i = 0; i < Number - 1; i++)
             {
-                if (members[i].CompareTo(fMember) == 0)
+                if (members[i] != null)
                 {
-                    return true;
+                    if (members[i].CompareTo(fMember) == 0)
+                    {
+                        return true;
+                    }
                 }
+                return false;
             }
-            return false;
-
         }
+        return false;
+
+
     }
 
     // Remove all the members in this member collection
@@ -176,6 +182,15 @@ class MemberCollection : IMemberCollection
             s = s + members[i].ToString() + "\n";
         return s;
     }
+
+
+    public void Display()
+    {
+        for (int i = 0; i < count; i++)
+            Console.Write(this.members[i]);
+    }
+
 }
+
 
 

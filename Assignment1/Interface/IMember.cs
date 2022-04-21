@@ -56,15 +56,16 @@ using System.Text;
         // To be implemented by students in Phase 1
             string PN = phonenumber;
 
+            // Check if the number is vaild or not
             if (PN.Length == 10)
             {
                 if (PN[1] == 0)
                 {
-                return true;
+                    return true;
                 }
                 else
                 {
-                return false;
+                    return false;
                 }
             }
             else

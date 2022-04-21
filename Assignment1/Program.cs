@@ -9,11 +9,24 @@ namespace Assignment1
             MemberCollection sCollection = new MemberCollection();
 
             //testing add
-            sCollection.Add(member.firstname = "Andrew", member.lastname = "Sheu");//"Andrew","Sheu","0452276278"
-            sCollection.Delete();//"Sam","Sheu","0919340267" 
-            sCollection.Search();//"Sam","Sheu","0919340267"
-            sCollection.ToString();
+
+            Member f = new Member("Andrew", "Sheu");
+            sCollection.Add(f);
+
+            Member t = new Member("Andrew", "Sheu");
+            sCollection.Add(t);
+
+            Member y = new Member("Andrew", "Sheu");
+            sCollection.Add(y);
+
+            //sCollection.Delete();//"Sam","Sheu","0919340267" 
+            //sCollection.Search(member);//"Sam","Sheu","0919340267"
+            Console.WriteLine("Display Area");
+
             Console.WriteLine();
+
+            sCollection.ToString();
+
 
 
 
@@ -23,9 +36,6 @@ namespace Assignment1
 
 
             //testing search
-
-
-            Console.WriteLine();
 
 
         }

@@ -1,0 +1,13 @@
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.csprojAssemblyReference.cache
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.AssemblyInfoInputs.cache
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.AssemblyInfo.cs
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.csproj.CoreCompileInputs.cache
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.exe
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.deps.json
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.runtimeconfig.json
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.runtimeconfig.dev.json
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.dll
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\bin\Debug\netcoreapp3.1\Assignment1.pdb
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.dll
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.pdb
+C:\Users\andre\OneDrive\文件\GitHub\CAB301-Assignment\CAB301-Assignment\Assignment1\obj\Debug\netcoreapp3.1\Assignment1.genruntimeconfig.cache
