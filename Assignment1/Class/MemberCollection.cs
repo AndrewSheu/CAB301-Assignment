@@ -1,7 +1,6 @@
-﻿    //CAB301 assessment 1 - 2022
+﻿//CAB301 assessment 1 - 2022
 //The implementation of MemberCollection ADT
 using System;
-using System.Linq;
 
 
 class MemberCollection : IMemberCollection
@@ -42,7 +41,6 @@ class MemberCollection : IMemberCollection
 
     public MemberCollection()
     {
-        members = new Member[8];
     }
 
     // check if this member collection is full
@@ -66,36 +64,23 @@ class MemberCollection : IMemberCollection
     // Post-condition: a new member is added to the member collection and the members are sorted in ascending order by their full names;
     // No duplicate will be added into this the member collection
     public void Add(IMember member)
-    {       
+    {
         // To be implemented by students in Phase 1
         //if (!IsFull())
         {
             Member aMember = new Member(member.FirstName, member.LastName);
 
-            int i = 0;
-            while ((i < count) && (members[i].CompareTo(aMember)) != 0)
-            {
-                i++;    
-            }
+            members[count] = aMember;
+            count++;
 
-            if (i == count)
-            {
-                ///if no same last name, add the last name
-                members[count] = aMember;
-                count++;
-                Console.WriteLine("123");
-                Console.WriteLine(count);
-                Console.WriteLine(capacity);
-                Console.WriteLine(i);
-
-
-            }
-
+            // sorted in the dictionary order by the members’ last names,
+            // and if there are two members who have the same last name,
+            // then they are sorted by their first names.
         }
         //else
         {
-            //Console.WriteLine("The List is Full");
-        }
+        //    Console.WriteLine("The List is Full");
+        }   
 
 
     }
@@ -103,7 +88,7 @@ class MemberCollection : IMemberCollection
     // Remove a given member out of this member collection
     // Pre-condition: nil
     // Post-condition: the given member has been removed from this member collection, if the given meber was in the member collection
-    public async void Delete(IMember aMember)
+    public void Delete(IMember aMember)
     {
         // To be implemented by students in Phase 1
 
@@ -118,17 +103,16 @@ class MemberCollection : IMemberCollection
 
         if ( i == count )
         {
-
+            Console.WriteLine("The member does not exist!");
         }
         else
         {
             for (int j = i + 1; j < count; j++)
             {
-                members[j-1] = members[i];
+                members[j-1] = members[j];
             }
             count--;
         }
-
     }
 
     // Search a given member in this member collection 
@@ -148,7 +132,8 @@ class MemberCollection : IMemberCollection
                 {
                     if (members[i].CompareTo(fMember) == 0)
                     {
-                        return true;
+                        //return true;
+                        Console.WriteLine("find: " + fMember.LastName);
                     }
                 }
                 return false;
@@ -183,13 +168,14 @@ class MemberCollection : IMemberCollection
         return s;
     }
 
-
     public void Display()
     {
         for (int i = 0; i < count; i++)
-            Console.Write(this.members[i]);
+        {
+            Console.Write(members[i].FirstName + " " + members[i].LastName);
+            Console.WriteLine();
+        }
     }
-
 }
 
 

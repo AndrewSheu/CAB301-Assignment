@@ -6,38 +6,66 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            MemberCollection sCollection = new MemberCollection();
+            /*
+            MemberCollection aCollection = new MemberCollection(5);
 
-            //testing add
+            Member a = new Member("Andrew", "Sheu");
+            Member b = new Member("matt", "Sheu");  
+            Member c = new Member("rek", "Sheu");
+            Member d = new Member("Andrew", "Sheu");
 
-            Member f = new Member("Andrew", "Sheu");
-            sCollection.Add(f);
 
-            Member t = new Member("Andrew", "Sheu");
-            sCollection.Add(t);
+            aCollection.Add(a);
+            aCollection.Add(b);
+            aCollection.Add(c);
 
-            Member y = new Member("Andrew", "Sheu");
-            sCollection.Add(y);
+            Console.WriteLine("add section");
+            Console.WriteLine();
 
-            //sCollection.Delete();//"Sam","Sheu","0919340267" 
-            //sCollection.Search(member);//"Sam","Sheu","0919340267"
-            Console.WriteLine("Display Area");
+
+            aCollection.Display();
+            Console.WriteLine();
+
+            //aCollection.Delete(c);
+            //aCollection.Add(d);
+
+            Console.WriteLine("delete section");
+            Console.WriteLine();
+                
+
+            aCollection.Display();
+            Console.WriteLine();
+
+
+            Console.WriteLine("search section");
+            aCollection.Search(a);
 
             Console.WriteLine();
 
-            sCollection.ToString();
+            *//*
+
+            string ab = "1234567897";
+            string ac = "0234567897";
 
 
 
+            Console.WriteLine(IMember.IsValidContactNumber(ab));
+            Console.WriteLine();
+            Console.WriteLine(IMember.IsValidContactNumber(ac));
 
-            //testing delete
-            //sCollection.Delete("Annie","Lu","0432291538");
+            
+             */
 
+            string aa = "123";
 
+            Console.WriteLine(IMember.IsValidPin(aa));
+            Console.WriteLine();
 
-            //testing search
-
+           
 
         }
+
+
+
     }
 }
