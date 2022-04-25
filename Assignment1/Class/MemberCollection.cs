@@ -66,20 +66,39 @@ class MemberCollection : IMemberCollection
     public void Add(IMember member)
     {
         // To be implemented by students in Phase 1
-        //if (!IsFull())
+        if (!IsFull())
         {
             Member aMember = new Member(member.FirstName, member.LastName);
 
             members[count] = aMember;
             count++;
 
+            int i = 0;
+
+            while ((i < count) && (members[i].CompareTo(aMember) != 0))
+            {
+                i++;
+            }
+
+            if (i == 0)
+            {
+                Console.WriteLine("same one ");
+            }
+            else
+            {
+                Console.WriteLine(i);
+
+                Console.WriteLine("same last");
+            }
+
+
             // sorted in the dictionary order by the members’ last names,
             // and if there are two members who have the same last name,
             // then they are sorted by their first names.
         }
-        //else
+        else
         {
-        //    Console.WriteLine("The List is Full");
+            Console.WriteLine("The List is Full");
         }   
 
 

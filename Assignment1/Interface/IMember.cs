@@ -55,20 +55,10 @@ interface IMember
     {
         // To be implemented by students in Phase 1
 
-
-
         // Check if the number is vaild or not
-        if (phonenumber.Length == 10)
+        if (phonenumber.Length == 10 && phonenumber[0] == 0) 
         {
-
-            if (phonenumber[0] == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return true;
         }
         else
         {

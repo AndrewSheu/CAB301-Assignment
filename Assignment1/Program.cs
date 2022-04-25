@@ -6,28 +6,30 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            /*
+            
             MemberCollection aCollection = new MemberCollection(5);
 
             Member a = new Member("Andrew", "Sheu");
             Member b = new Member("matt", "Sheu");  
             Member c = new Member("rek", "Sheu");
-            Member d = new Member("Andrew", "Sheu");
+            Member d = new Member("Samuel", "Sheu");
 
 
             aCollection.Add(a);
             aCollection.Add(b);
             aCollection.Add(c);
+            //aCollection.Add(d);
+
 
             Console.WriteLine("add section");
             Console.WriteLine();
-
 
             aCollection.Display();
             Console.WriteLine();
 
             //aCollection.Delete(c);
             //aCollection.Add(d);
+            /*
 
             Console.WriteLine("delete section");
             Console.WriteLine();
@@ -54,14 +56,14 @@ namespace Assignment1
             Console.WriteLine(IMember.IsValidContactNumber(ac));
 
             
-             */
+             
 
             string aa = "123";
 
             Console.WriteLine(IMember.IsValidPin(aa));
             Console.WriteLine();
 
-           
+           */
 
         }
 
