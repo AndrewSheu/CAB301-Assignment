@@ -72,36 +72,11 @@ class MemberCollection : IMemberCollection
 
             members[count] = aMember;
             count++;
-
-            int i = 0;
-
-            while ((i < count) && (members[i].CompareTo(aMember) != 0))
-            {
-                i++;
-            }
-
-            if (i == 0)
-            {
-                Console.WriteLine("same one ");
-            }
-            else
-            {
-                Console.WriteLine(i);
-
-                Console.WriteLine("same last");
-            }
-
-
-            // sorted in the dictionary order by the members’ last names,
-            // and if there are two members who have the same last name,
-            // then they are sorted by their first names.
         }
         else
         {
             Console.WriteLine("The List is Full");
-        }   
-
-
+        }
     }
 
     // Remove a given member out of this member collection
@@ -122,6 +97,7 @@ class MemberCollection : IMemberCollection
 
         if ( i == count )
         {
+            // if the delete member is not exist
             Console.WriteLine("The member does not exist!");
         }
         else
@@ -143,22 +119,27 @@ class MemberCollection : IMemberCollection
 
         Member fMember = new Member( member.FirstName, member.LastName);
 
-        if (Number != 0)
+
+        if (count != 0)
         {
-            for (int i = 0; i < Number - 1; i++)
+            for (int i = 0; i < count; i++)
             {
                 if (members[i] != null)
                 {
                     if (members[i].CompareTo(fMember) == 0)
                     {
-                        //return true;
-                        Console.WriteLine("find: " + fMember.LastName);
+                        return true;
                     }
                 }
                 return false;
             }
+            return false;
         }
-        return false;
+        else
+        {
+            return false;
+        }
+        //return false;
 
 
     }
@@ -185,6 +166,7 @@ class MemberCollection : IMemberCollection
         for (int i = 0; i < count; i++)
             s = s + members[i].ToString() + "\n";
         return s;
+        //Console.WriteLine();
     }
 
     public void Display()

@@ -1,33 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\CAB301-Assignment\\Assignment1\\Assignment1.csproj": {}
+    "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/Assignment1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\CAB301-Assignment\\Assignment1\\Assignment1.csproj": {
+    "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/Assignment1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\CAB301-Assignment\\Assignment1\\Assignment1.csproj",
+        "projectUniqueName": "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/Assignment1.csproj",
         "projectName": "Assignment1",
-        "projectPath": "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\CAB301-Assignment\\Assignment1\\Assignment1.csproj",
-        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\CAB301-Assignment\\Assignment1\\obj\\",
+        "projectPath": "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/Assignment1.csproj",
+        "packagesPath": "/Users/andrewsheu/.nuget/packages/",
+        "outputPath": "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/andrewsheu/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

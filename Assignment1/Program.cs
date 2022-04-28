@@ -7,27 +7,50 @@ namespace Assignment1
         static void Main(string[] args)
         {
             
-            MemberCollection aCollection = new MemberCollection(5);
+            MemberCollection aCollection = new MemberCollection(7);
 
             Member a = new Member("Andrew", "Sheu");
             Member b = new Member("matt", "Sheu");  
             Member c = new Member("rek", "Sheu");
             Member d = new Member("Samuel", "Sheu");
+            Member t = new Member("djs", "Sheu");
+            Member w = new Member("annie", "lu");
 
 
             aCollection.Add(a);
             aCollection.Add(b);
             aCollection.Add(c);
-            //aCollection.Add(d);
+            aCollection.Add(d);
+            aCollection.Add(w);
 
 
-            Console.WriteLine("add section");
-            Console.WriteLine();
+
+
+            Console.WriteLine("Adding the member to the list" +
+                "" +
+                "");
+            aCollection.Display();
+
+            Console.WriteLine("" +
+                "" +
+                "");
+            Console.WriteLine("Delete member area");
+            Console.WriteLine("Delete member :" + t.FirstName );
+            aCollection.Delete(t);
+
+            Console.WriteLine("");
 
             aCollection.Display();
-            Console.WriteLine();
 
-            //aCollection.Delete(c);
+            Console.WriteLine("");
+
+            Console.WriteLine("Searching member area");
+            Console.WriteLine("searching member :" + w.FirstName);
+
+
+            aCollection.Search(w);
+
+
             //aCollection.Add(d);
             /*
 
