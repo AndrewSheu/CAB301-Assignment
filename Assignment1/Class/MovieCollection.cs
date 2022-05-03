@@ -71,7 +71,7 @@ public class MovieCollection : IMovieCollection
         }
 		else
         {
-			return false;
+			return false;	
         }
 	}
 
@@ -103,19 +103,19 @@ public class MovieCollection : IMovieCollection
 	public bool Delete(IMovie movie)
 	{
 		//To be completed
-		int i = 0;
-		if (movie.title[i] == movie.title) // if the movie is in the list
+		IMovie Delete_movie = new IMovie(movie);
+
+		for (int i = 0; i <= count; i = i + 1) 
 		{
-			if () //if remove success
-			{ 
+			if (movie.Title[i] != Delete_movie.Title)
+			{
 				return true;
 			}
-        }
-		else
-        {
-			if (movie.title[i]) // if not in the list
-			return false;
-        }
+			else
+			{
+				return false;
+			}
+		}
 	}
 
 	// Search for a movie in this movie collection
@@ -125,7 +125,18 @@ public class MovieCollection : IMovieCollection
 	public bool Search(IMovie movie)
 	{
 		//To be completed
-		
+		IMovie Search_movie = new IMovie(movie);
+		for (int i = 0; i <= count; i = i + 1) 
+		{
+			if (movie.Title[i] == Search_movie.Title)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 
 	// Search for a movie by its title in this movie collection  
@@ -135,6 +146,7 @@ public class MovieCollection : IMovieCollection
 	public IMovie Search(string movietitle)
 	{
 		//To be completed
+
 	}
 
 
@@ -155,6 +167,11 @@ public class MovieCollection : IMovieCollection
 	public void Clear()
 	{
 		//To be completed
+		for (int i = 0; i < count; i++)
+        {
+            this.movie[i] = null;
+        }
+        count = 0;
 	}
 }
 
