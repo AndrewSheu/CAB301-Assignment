@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{F7F7B1D6-8289-4393-A4F7-6E054265519B}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assignment1/Class/MemberCollection.cs">
     <Files>
-      <File FileName="Assignment1/Program.cs" Line="26" Column="1" />
+      <File FileName="Assignment1/Program.cs" Line="16" Column="50" />
       <File FileName="Assignment1/Class/Member.cs" Line="49" Column="10" />
       <File FileName="Assignment1/Interface/IMemberCollection.cs" Line="49" Column="16" />
-      <File FileName="Assignment1/Class/MemberCollection.cs" Line="15" Column="16" />
+      <File FileName="Assignment1/Class/MemberCollection.cs" Line="144" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

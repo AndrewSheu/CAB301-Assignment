@@ -90,12 +90,12 @@ class MemberCollection : IMemberCollection
 
         int i = 0;
 
-        while (( i < count) && (members[i].CompareTo(fMember) != 0 ))
+        while ((i < count) && (members[i].CompareTo(fMember) != 0))
         {
             i++;
         }
 
-        if ( i == count )
+        if (i == count)
         {
             // if the delete member is not exist
             Console.WriteLine("The member does not exist!");
@@ -104,7 +104,7 @@ class MemberCollection : IMemberCollection
         {
             for (int j = i + 1; j < count; j++)
             {
-                members[j-1] = members[j];
+                members[j - 1] = members[j];
             }
             count--;
         }
@@ -117,7 +117,7 @@ class MemberCollection : IMemberCollection
     {
         // To be implemented by students in Phase 1
 
-        Member fMember = new Member( member.FirstName, member.LastName);
+        Member fMember = new Member(member.FirstName, member.LastName);
 
 
         if (count != 0)
@@ -139,9 +139,6 @@ class MemberCollection : IMemberCollection
         {
             return false;
         }
-        //return false;
-
-
     }
 
     // Remove all the members in this member collection
@@ -167,15 +164,6 @@ class MemberCollection : IMemberCollection
             s = s + members[i].ToString() + "\n";
         return s;
         //Console.WriteLine();
-    }
-
-    public void Display()
-    {
-        for (int i = 0; i < count; i++)
-        {
-            Console.Write(members[i].FirstName + " " + members[i].LastName);
-            Console.WriteLine();
-        }
     }
 }
 

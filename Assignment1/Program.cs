@@ -13,7 +13,6 @@ namespace Assignment1
             Member b = new Member("matt", "Sheu");  
             Member c = new Member("rek", "Sheu");
             Member d = new Member("Samuel", "Sheu");
-            Member t = new Member("djs", "Sheu");
             Member w = new Member("annie", "lu");
 
 
@@ -23,6 +22,7 @@ namespace Assignment1
             aCollection.Add(d);
             aCollection.Add(w);
 
+            Member t = new Member("djs", "Sheu");
 
 
 
@@ -34,6 +34,8 @@ namespace Assignment1
             Console.WriteLine("" +
                 "" +
                 "");
+
+            /*
             Console.WriteLine("Delete member area");
             Console.WriteLine("Delete member :" + t.FirstName );
             aCollection.Delete(t);
@@ -52,7 +54,7 @@ namespace Assignment1
 
 
             //aCollection.Add(d);
-            /*
+            
 
             Console.WriteLine("delete section");
             Console.WriteLine();
