@@ -81,13 +81,33 @@ public class MovieCollection : IMovieCollection
 	public bool Insert(IMovie movie)
 	{
 		//To be completed
+		IMovie Insert_movie = new IMovie(movie):
+		
+		for (int i = 0; i <= count; i = i + 1) 
+		{
+			if (movie.Title[i] == Insert_movie.Title)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+
+
+
+
+
+
 		if (count > 0)
         {
 			return true;
         }
 		else
         {
-			if (count = 0)
+			if (count == 0)
             {
 				return false;
             }
