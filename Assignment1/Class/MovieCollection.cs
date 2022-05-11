@@ -167,7 +167,7 @@ public class MovieCollection : IMovieCollection
         //To be completed
         for (int i = 0; i < count; i++)
         {
-            this.[i] = null;
+            this.movie[i] = null;
         }
         count = 0;
     }
