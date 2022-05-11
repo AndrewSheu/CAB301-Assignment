@@ -9,190 +9,178 @@ using System;
 //An instance of this class is a node in a binary search tree 
 public class BTreeNode
 {
-	private IMovie movie; // movie
-	private BTreeNode lchild; // reference to its left child 
-	private BTreeNode rchild; // reference to its right child
+    private IMovie movie; // movie
+    private BTreeNode lchild; // reference to its left child 
+    private BTreeNode rchild; // reference to its right child
 
-	public BTreeNode(IMovie movie)
-	{
-		this.movie = movie;
-		lchild = null;
-		rchild = null;
-	}
+    public BTreeNode(IMovie movie)
+    {
+        this.movie = movie;
+        lchild = null;
+        rchild = null;
+    }
 
-	public IMovie Movie
-	{
-		get { return movie; }
-		set { movie = value; }
-	}
+    public IMovie Movie
+    {
+        get { return movie; }
+        set { movie = value; }
+    }
 
-	public BTreeNode LChild
-	{
-		get { return lchild; }
-		set { lchild = value; }
-	}
+    public BTreeNode LChild
+    {
+        get { return lchild; }
+        set { lchild = value; }
+    }
 
-	public BTreeNode RChild
-	{
-		get { return rchild; }
-		set { rchild = value; }
-	}
+    public BTreeNode RChild
+    {
+        get { return rchild; }
+        set { rchild = value; }
+    }
 }
 
 // invariant: no duplicates in this movie collection
 public class MovieCollection : IMovieCollection
 {
-	private BTreeNode root; // movies are stored in a binary search tree and the root of the binary search tree is 'root' 
-	private int count; // the number of (different) movies currently stored in this movie collection 
+    private BTreeNode root; // movies are stored in a binary search tree and the root of the binary search tree is 'root' 
+    private int count; // the number of (different) movies currently stored in this movie collection 
 
 
 
-	// get the number of movies in this movie colllection 
-	// pre-condition: nil
-	// post-condition: return the number of movies in this movie collection and this movie collection remains unchanged
-	public int Number { get { return count; } }
+    // get the number of movies in this movie colllection 
+    // pre-condition: nil
+    // post-condition: return the number of movies in this movie collection and this movie collection remains unchanged
+    public int Number { get { return count; } }
 
-	// constructor - create an object of MovieCollection object
-	public MovieCollection()
-	{
-		root = null;
-		count = 0;	
-	}
+    // constructor - create an object of MovieCollection object
+    public MovieCollection()
+    {
+        root = null;
+        count = 0;
+    }
 
-	// Check if this movie collection is empty
-	// Pre-condition: nil
-	// Post-condition: return true if this movie collection is empty; otherwise, return false.
-	public bool IsEmpty()
-	{
-		//To be completed
-		if (MovieCollection == 0)
+    // Check if this movie collection is empty
+    // Pre-condition: nil
+    // Post-condition: return true if this movie collection is empty; otherwise, return false.
+    public bool IsEmpty()
+    {
+        //To be completed
+        if (root == null)
         {
-			return true;
+            return true;
         }
-		else
+        else
         {
-			return false;	
+            return false;
         }
-	}
+    }
 
-	// Insert a movie into this movie collection
-	// Pre-condition: nil
-	// Post-condition: the movie has been added into this movie collection and return true, if the movie is not in this movie collection; otherwise, the movie has not been added into this movie collection and return false.
-	public bool Insert(IMovie movie)
-	{
-		//To be completed
-		IMovie Insert_movie = new IMovie(movie):
-		
-		for (int i = 0; i <= count; i = i + 1) 
-		{
-			if (movie.Title[i] == Insert_movie.Title)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-
-
-
-
-
-
-
-		if (count > 0)
+    // Insert a movie into this movie collection
+    // Pre-condition: nil
+    // Post-condition: the movie has been added into this movie collection and return true, if the movie is not in this movie collection; otherwise, the movie has not been added into this movie collection and return false.
+    public bool Insert(IMovie movie)
+    {
+        //To be completed
+        if (count > 0)
         {
-			return true;
+            return true;
         }
-		else
+        else
         {
-			if (count == 0)
+            if (count == 0)
             {
-				return false;
+                return false;
             }
-			return false;
+            return false;
         }
-	}
+    }
 
-
-
-	// Delete a movie from this movie collection
-	// Pre-condition: nil
-	// Post-condition: the movie is removed out of this movie collection and return true, if it is in this movie collection; return false, if it is not in this movie collection
-	public bool Delete(IMovie movie)
-	{
-		//To be completed
-		IMovie Delete_movie = new IMovie(movie);
-
-		for (int i = 0; i <= count; i = i + 1) 
-		{
-			if (movie.Title[i] != Delete_movie.Title)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-	}
-
-	// Search for a movie in this movie collection
-	// pre: nil
-	// post: return true if the movie is in this movie collection;
-	//	     otherwise, return false.
-	public bool Search(IMovie movie)
-	{
-		//To be completed
-		IMovie Search_movie = new IMovie(movie);
-		for (int i = 0; i <= count; i = i + 1) 
-		{
-			if (movie.Title[i] == Search_movie.Title)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-	}
-
-	// Search for a movie by its title in this movie collection  
-	// pre: nil
-	// post: return the reference of the movie object if the movie is in this movie collection;
-	//	     otherwise, return null.
-	public IMovie Search(string movietitle)
-	{
-		//To be completed
-
-	}
-
-
-
-	// Store all the movies in this movie collection in an array in the dictionary order by their titles
-	// Pre-condition: nil
-	// Post-condition: return an array of movies that are stored in dictionary order by their titles
-	public IMovie[] ToArray()
-	{
-		//To be completed
-	}
-
-
-
-	// Clear this movie collection
-	// Pre-condotion: nil
-	// Post-condition: all the movies have been removed from this movie collection 
-	public void Clear()
-	{
-		//To be completed
-		for (int i = 0; i < count; i++)
+    // Delete a movie from this movie collection
+    // Pre-condition: nil
+    // Post-condition: the movie is removed out of this movie collection and return true, if it is in this movie collection; return false, if it is not in this movie collection
+    public bool Delete(IMovie movie)
+    {
+        //To be completed
+        for (int i = 0; i <= count; i = i + 1)
         {
-            this.movie[i] = null;
+            if (movie.Title[i] != movie.Title[count])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    // Search for a movie in this movie collection
+    // pre: nil
+    // post: return true if the movie is in this movie collection;
+    //	     otherwise, return false.
+    public bool Search(IMovie movie)
+    {
+        //To be completed
+        IMovie Search_movie = new IMovie(movie);
+        for (int i = 0; i <= count; i = i + 1)
+        {
+            if (movie.Title[i] == Search_movie.Title)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    // Search for a movie by its title in this movie collection  
+    // pre: nil
+    // post: return the reference of the movie object if the movie is in this movie collection;
+    //	     otherwise, return null.
+    public IMovie Search(string movietitle)
+    {
+        //To be completed
+
+    }
+
+
+
+    // Store all the movies in this movie collection in an array in the dictionary order by their titles
+    // Pre-condition: nil
+    // Post-condition: return an array of movies that are stored in dictionary order by their titles
+    public IMovie[] ToArray()
+    {
+        //To be completed
+        List<Movie> membersList = Movie.InOrderTraverse();
+        return membersList.ToArray();
+    }
+
+
+
+    // Clear this movie collection
+    // Pre-condotion: nil
+    // Post-condition: all the movies have been removed from this movie collection 
+    public void Clear()
+    {
+        //To be completed
+        for (int i = 0; i < count; i++)
+        {
+            this.[i] = null;
         }
         count = 0;
-	}
+    }
+
+    ////////////
+    // Display Testing Area
+    public void Display()
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Console.WriteLine(movie[i]);
+        }
+    }
 }
 
 
