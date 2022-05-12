@@ -97,7 +97,64 @@ public class MovieCollection : IMovieCollection
     public bool Delete(IMovie movie)
     {
         //To be completed
+        BTreeNode ptr = root; // search reference
+        BTreeNode parent = null; // parent of ptr
 
+        while ((ptr != null) && (movie.CompareTo(ptr.movie) != 0))
+        {
+            parent = ptr;
+            if (movie.CompareTo(ptr.movie) < 0) // move to the left child of ptr
+                ptr = ptr.LChild;
+            else
+                ptr = ptr.RChild;
+        }
+
+        if (ptr != null) // if search was successful
+        {
+            // case 3: item has two children
+            if ((ptr.LChild != null) && (ptr.RChild != null))
+            {
+                // find the right-most node in left subtree of ptr
+                if (ptr.LChild.RChild == null) // a special case: the right subtree of ptr.LChild is empty
+                {
+                    ptr.movie = ptr.LChild.movie;
+                    ptr.LChild = ptr.LChild.LChild;
+                }
+                else
+                {
+                    BTreeNode p = ptr.LChild;
+                    BTreeNode pp = ptr; // parent of p
+                    while (p.RChild != null)
+                    {
+                        pp = p;
+                        p = p.RChild;
+                    }
+                    // copy the item at p to ptr
+                    ptr.movie = p.movie;
+                    pp.RChild = p.LChild;
+                }
+            }
+            else // cases 1 & 2: item has no or only one child
+            {
+                BTreeNode c;
+                if (ptr.LChild != null)
+                    c = ptr.LChild;
+                else
+                    c = ptr.RChild;
+
+                // remove node ptr
+                if (ptr == root) //need to change root
+                    root = c;
+                else
+                {
+                    if (ptr == parent.LChild)
+                        parent.LChild = c;
+                    else
+                        parent.RChild = c;
+                }
+            }
+
+        }
     }
 
     // Search for a movie in this movie collection
