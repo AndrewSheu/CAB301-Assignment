@@ -81,15 +81,35 @@ public class MovieCollection : IMovieCollection
     public bool Insert(IMovie movie)
     {
         //To be completed
-        if (movie.Title.CompareTo(movie.Title) == 1 || movie.Title.CompareTo(movie.Title) == 0)
+		if (root == null) // if add new item in, directly add
+		{
+			root = new BTreeNode(item);
+		}
+		else // if have item in, check if have the same one
+		{
+			Insert(movie, root);
+		}
+    }
+
+    private bool Insert(IMovie movie, BTreeNode ptr)
+    {
+        if (movie.CompareTo(ptr.movie) < 0)
         {
-            return true;
+            if (ptr.LChild == null)
+                ptr.LChild = new BTreeNode(movie);
+            else
+                Insert(movie, ptr.LChild);
         }
         else
         {
-            return false;
+            if (ptr.RChild == null)
+                ptr.RChild = new BTreeNode(movie);
+            else
+                Insert(movie, ptr.RChild);
         }
     }
+
+
 
     // Delete a movie from this movie collection
     // Pre-condition: nil
@@ -233,17 +253,6 @@ public class MovieCollection : IMovieCollection
     {
         //To be completed
         return root = null;
-
-    }
-
-    ////////////
-    // Display Testing Area
-    public void Display()
-    {
-        for (int i = 0; i < count; i++)
-        {
-            Console.WriteLine(movie[i]);
-        }
     }
 }
 
