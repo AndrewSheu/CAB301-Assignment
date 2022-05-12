@@ -81,16 +81,12 @@ public class MovieCollection : IMovieCollection
     public bool Insert(IMovie movie)
     {
         //To be completed
-        if (count > 0)
+        if (movie.Title.CompareTo(movie.Title) == 1 || movie.Title.CompareTo(movie.Title) == 0)
         {
             return true;
         }
         else
         {
-            if (count == 0)
-            {
-                return false;
-            }
             return false;
         }
     }
@@ -101,17 +97,7 @@ public class MovieCollection : IMovieCollection
     public bool Delete(IMovie movie)
     {
         //To be completed
-        for (int i = 0; i <= count; i = i + 1)
-        {
-            if (movie.Title[i] != movie.Title[count])
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
     }
 
     // Search for a movie in this movie collection
@@ -121,19 +107,36 @@ public class MovieCollection : IMovieCollection
     public bool Search(IMovie movie)
     {
         //To be completed
-        IMovie Search_movie = new IMovie(movie);
-        for (int i = 0; i <= count; i = i + 1)
+        return Search(movie, root);
+    }
+
+    private bool Search(IMovie movie, BTreeNode r)
+    {
+        if (r != null)
         {
-            if (movie.Title[i] == Search_movie.Title)
+            if (movie.CompareTo(r.movie) == 0)
             {
                 return true;
             }
             else
             {
-                return false;
+                if (movie.CompareTo(r.movie) < 0)
+                {
+                    return Search(movie, r.LChild);
+                }
+                else
+                {
+                    return Search(movie, r.RChild);
+                }
             }
         }
+        else
+        {
+            return false;
+        }
     }
+
+
 
     // Search for a movie by its title in this movie collection  
     // pre: nil
@@ -142,7 +145,14 @@ public class MovieCollection : IMovieCollection
     public IMovie Search(string movietitle)
     {
         //To be completed
-
+        if (Title.CompareTo(movietitle) == 0)
+        {
+            return movietitle;
+        }
+        else
+        {
+            return null;
+        }
     }
 
 
@@ -165,11 +175,8 @@ public class MovieCollection : IMovieCollection
     public void Clear()
     {
         //To be completed
-        for (int i = 0; i < count; i++)
-        {
-            this.movie[i] = null;
-        }
-        count = 0;
+        return root = null;
+
     }
 
     ////////////

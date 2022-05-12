@@ -71,7 +71,7 @@ public interface IMovie
     {
         get;
         set;
-     }
+    }
 
     //get all the members who are currently holding this movie
     IMemberCollection Borrowers  
