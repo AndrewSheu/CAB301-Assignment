@@ -68,7 +68,8 @@ public class Movie : IMovie
     //                  if the member is in the borrowers list, do not add the member to the borrowers list and return false.  
     public bool AddBorrower(IMember member)
     {
-        //To be completed 
+        //To be completed
+        
     }
 
     //Remove a member from the borrower list of this movie
@@ -79,7 +80,18 @@ public class Movie : IMovie
     public bool RemoveBorrower(IMember member)
     {
         //To be completed
+        if (borrowers.CompareTo(member) != 0) //have remove from the list
+        {
+            TotalCopies++;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
+
+
 
     //Define how to comapre two Movie objects
     //This movie's title is compared to another movie's title 
@@ -90,7 +102,20 @@ public class Movie : IMovie
     public int CompareTo(IMovie another)
     {
         //To be completed
+        if (this.title.CompareTo(another.Title) < 0)
+        {
+            return -1;
+        }
+        else
+            if (this.title.CompareTo(another.Title) == 0)
+        {
+            return this.title.CompareTo(another.Title);
+        }
+        else
+            return 1;
     }
+
+
 
     //Return a string containing the title, genre, classification, duration, and the number of copies of this movie currently in the  library 
     //Pre-condition: nil
