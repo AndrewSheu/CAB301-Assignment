@@ -81,32 +81,48 @@ public class MovieCollection : IMovieCollection
     public bool Insert(IMovie movie)
     {
         //To be completed
-		if (root == null) // if add new item in, directly add
-		{
-			root = new BTreeNode(item);
-		}
-		else // if have item in, check if have the same one
-		{
-			Insert(movie, root);
-		}
+        if (root == null) // if add new item in, directly add
+        {
+            root = new BTreeNode(item);
+            return true;
+        }
+        else // if have item in, check if have the same one
+        {
+            Insert(movie, root);
+        }
     }
 
     private bool Insert(IMovie movie, BTreeNode ptr)
     {
-        if (movie.CompareTo(ptr.movie) < 0)
+        if (movie.CompareTo(ptr.movie) != 0)
         {
-            if (ptr.LChild == null)
-                ptr.LChild = new BTreeNode(movie);
+            if (movie.CompareTo(ptr.movie) < 0)
+            {
+                if (ptr.LChild == null)
+                {
+                    ptr.LChild = new BTreeNode(movie);
+                    return true;
+                }
+
+                else
+                    Insert(movie, ptr.LChild);
+            }
             else
-                Insert(movie, ptr.LChild);
+            {
+                if (ptr.RChild == null)
+                {
+                    ptr.RChild = new BTreeNode(movie);
+                    return true;
+                }
+                else
+                    Insert(movie, ptr.RChild);
+            }
         }
         else
         {
-            if (ptr.RChild == null)
-                ptr.RChild = new BTreeNode(movie);
-            else
-                Insert(movie, ptr.RChild);
+            return false;
         }
+
     }
 
 
@@ -124,13 +140,18 @@ public class MovieCollection : IMovieCollection
         {
             parent = ptr;
             if (movie.CompareTo(ptr.movie) < 0) // move to the left child of ptr
+            {
                 ptr = ptr.LChild;
+            }
             else
+            {
                 ptr = ptr.RChild;
+            }
         }
 
         if (ptr != null) // if search was successful
         {
+            return true;
             // case 3: item has two children
             if ((ptr.LChild != null) && (ptr.RChild != null))
             {
@@ -173,7 +194,10 @@ public class MovieCollection : IMovieCollection
                         parent.RChild = c;
                 }
             }
-
+        }
+        else
+        {
+            return false;
         }
     }
 
