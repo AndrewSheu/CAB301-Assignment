@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 public class Movie : IMovie
 {
-    private string title;  // the titleof this movie
+    private string title;  // the title of this movie
     private MovieGenre genre;  // the genre of this movie
     private MovieClassification classification; // the classification of this movie
     private int duration; // the duration of this movie in minutes
@@ -26,7 +26,7 @@ public class Movie : IMovie
         duration = d;
         availablecopies = n;
         totalcopies = n;
-        noborrows = 0;    
+        noborrows = 0;
         borrowers = new MemberCollection(10);
     }
 
@@ -46,13 +46,13 @@ public class Movie : IMovie
     public MovieClassification Classification { get { return classification; } set { classification = value; } }
 
     //get and set the duration of this movie
-    public int Duration { get { return duration; } set { duration = value;  } }
+    public int Duration { get { return duration; } set { duration = value; } }
 
     //get and set the number of DVDs of this movie currently available in the library
-    public int AvailableCopies { get { return availablecopies; } set { availablecopies = value;  } }
+    public int AvailableCopies { get { return availablecopies; } set { availablecopies = value; } }
 
     //get and set the total number of DVDs of this movie in the library
-    public int TotalCopies { get { return totalcopies; } set { totalcopies = value;  } }
+    public int TotalCopies { get { return totalcopies; } set { totalcopies = value; } }
 
     //get and set the number of times that this movie has been borrowed so far
     public int NoBorrowings { get { return noborrows; } set { noborrows = value; } }
@@ -69,7 +69,20 @@ public class Movie : IMovie
     public bool AddBorrower(IMember member)
     {
         //To be completed
-        
+        while (availablecopies >= 1)
+        {
+            if (borrowers.CompareTo(member) != 0)
+            {
+                borrowers member = new borrowers();// add member in the list
+                availablecopies--;
+                noborrows++;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     //Remove a member from the borrower list of this movie
@@ -80,8 +93,9 @@ public class Movie : IMovie
     public bool RemoveBorrower(IMember member)
     {
         //To be completed
-        if (borrowers.CompareTo(member) != 0) //have remove from the list
+        if (borrowers.CompareTo(member) == 0) //check if there is member in the list
         {
+            borrowers.Remove(member);//remove the member from the list
             TotalCopies++;
             return true;
         }

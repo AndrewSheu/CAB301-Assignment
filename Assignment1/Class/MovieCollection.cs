@@ -264,8 +264,8 @@ public class MovieCollection : IMovieCollection
     public IMovie[] ToArray()
     {
         //To be completed
-        List<Movie> membersList = Movie.InOrderTraverse();
-        return membersList.ToArray();
+        List<Movie> movieList = new List<Movie>(title);
+        return movieList;
     }
 
 
