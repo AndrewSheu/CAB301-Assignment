@@ -83,7 +83,7 @@ public class MovieCollection : IMovieCollection
         //To be completed
         if (root == null) // if add new item in, directly add
         {
-            root = new BTreeNode(item);
+            root = new BTreeNode(movie);
             return true;
         }
         else // if have item in, check if have the same one
@@ -94,9 +94,9 @@ public class MovieCollection : IMovieCollection
 
     private bool Insert(IMovie movie, BTreeNode ptr)
     {
-        if (movie.CompareTo(ptr.movie) != 0)
+        if (movie.CompareTo(ptr.Movie) != 0)
         {
-            if (movie.CompareTo(ptr.movie) < 0)
+            if (movie.CompareTo(ptr.Movie) < 0)
             {
                 if (ptr.LChild == null)
                 {
@@ -136,10 +136,10 @@ public class MovieCollection : IMovieCollection
         BTreeNode ptr = root; // search reference
         BTreeNode parent = null; // parent of ptr
 
-        while ((ptr != null) && (movie.CompareTo(ptr.movie) != 0))
+        while ((ptr != null) && (movie.CompareTo(ptr.Movie) != 0))
         {
             parent = ptr;
-            if (movie.CompareTo(ptr.movie) < 0) // move to the left child of ptr
+            if (movie.CompareTo(ptr.Movie) < 0) // move to the left child of ptr
             {
                 ptr = ptr.LChild;
             }
@@ -158,7 +158,7 @@ public class MovieCollection : IMovieCollection
                 // find the right-most node in left subtree of ptr
                 if (ptr.LChild.RChild == null) // a special case: the right subtree of ptr.LChild is empty
                 {
-                    ptr.movie = ptr.LChild.movie;
+                    ptr.Movie = ptr.LChild.Movie;
                     ptr.LChild = ptr.LChild.LChild;
                 }
                 else
@@ -171,7 +171,7 @@ public class MovieCollection : IMovieCollection
                         p = p.RChild;
                     }
                     // copy the item at p to ptr
-                    ptr.movie = p.movie;
+                    ptr.Movie = p.Movie;
                     pp.RChild = p.LChild;
                 }
             }
@@ -215,13 +215,13 @@ public class MovieCollection : IMovieCollection
     {
         if (r != null)
         {
-            if (movie.CompareTo(r.movie) == 0)
+            if (movie.CompareTo(r.Movie) == 0)
             {
                 return true;
             }
             else
             {
-                if (movie.CompareTo(r.movie) < 0)
+                if (movie.CompareTo(r.Movie) < 0)
                 {
                     return Search(movie, r.LChild);
                 }
@@ -246,15 +246,20 @@ public class MovieCollection : IMovieCollection
     public IMovie Search(string movietitle)
     {
         //To be completed
-        if (Title.CompareTo(movietitle) == 0)
+        
+        String ad = IMovieTitle 
+
+        for ( int i = 0; i < count; i++)
         {
-            return movietitle;
+            if ( [i].CompareTo(movietitle) == 0)
+            {
+                return movietitle;
+            }
         }
-        else
-        {
-            return null;
-        }
+        return null;
     }
+
+
 
 
 
@@ -264,7 +269,7 @@ public class MovieCollection : IMovieCollection
     public IMovie[] ToArray()
     {
         //To be completed
-        List<Movie> movieList = new List<Movie>(title);
+        List<IMovie> movieList = new List<IMovie>(tITL);
         return movieList;
     }
 
@@ -276,7 +281,7 @@ public class MovieCollection : IMovieCollection
     public void Clear()
     {
         //To be completed
-        return root = null;
+        root = null;
     }
 }
 

@@ -163,7 +163,6 @@ class MemberCollection : IMemberCollection
         for (int i = 0; i < count; i++)
             s = s + members[i].ToString() + "\n";
         return s;
-        //Console.WriteLine();
     }
 }
 

@@ -1,28 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/Assignment1.csproj": {}
+    "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\Assignment1\\Assignment1.csproj": {}
   },
   "projects": {
-    "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/Assignment1.csproj": {
+    "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\Assignment1\\Assignment1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/Assignment1.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\Assignment1\\Assignment1.csproj",
         "projectName": "Assignment1",
-        "projectPath": "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/Assignment1.csproj",
-        "packagesPath": "/Users/andrewsheu/.nuget/packages/",
-        "outputPath": "/Users/andrewsheu/Projects/CAB301-Assignment-1/Assignment1/obj/",
+        "projectPath": "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\Assignment1\\Assignment1.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\OneDrive\\文件\\GitHub\\CAB301-Assignment\\Assignment1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "/Users/andrewsheu/.config/NuGet/NuGet.Config"
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

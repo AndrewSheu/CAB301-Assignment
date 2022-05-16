@@ -93,7 +93,7 @@ public class Movie : IMovie
     public bool RemoveBorrower(IMember member)
     {
         //To be completed
-        if (borrowers.CompareTo(member) == 0) //check if there is member in the list
+        if (this.borrowers.CompareTo(member) == 0) //check if there is member in the list
         {
             borrowers.Remove(member);//remove the member from the list
             TotalCopies++;
@@ -137,6 +137,6 @@ public class Movie : IMovie
     public string ToString()
     {
         //To be completed
-        return (" title: \r" + title + " genre: \r" + genre + " classification: \r" + classification + " duration: \r" + duration + " availablecopies: \r" + availablecopies)
+        return (" title: \r" + title + " genre: \r" + genre + " classification: \r" + classification + " duration: \r" + duration + " availablecopies: \r" + availablecopies);
     }
 }
