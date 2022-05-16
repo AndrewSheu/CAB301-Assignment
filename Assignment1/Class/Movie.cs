@@ -137,7 +137,6 @@ public class Movie : IMovie
     public string ToString()
     {
         //To be completed
-        return ( title  + " " + genre + " " + classification + " " + duration + " " + availablecopies);
+        return (" title: \r" + title + " genre: \r" + genre + " classification: \r" + classification + " duration: \r" + duration + " availablecopies: \r" + availablecopies)
     }
 }
-
